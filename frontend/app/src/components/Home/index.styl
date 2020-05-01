@@ -1,0 +1,36 @@
+@import '~@/assets/stylesheets/colorset/index.styl'
+
+// stateful ////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// basic ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+#home
+    display flex
+    flex-direction column
+    align-items center
+    background-image url("~@/assets/images/scifi-planet-view.jpg")
+    background-size 100%
+
+    *
+        user-select none
+
+    >.title
+        font-size 56px
+        color white
+        padding 100px 0px 50px 0px
+        height min-content
+    
+    >.entry
+        display block
+        height 52px
+        width 320px
+        margin 10px 0px 10px 0px
+        font-size 24px
+        border 2px solid $blue80
+        opacity 0.75
+        &:hover
+            opacity 1
+    
+    >.version
+        position absolute
+        left 10px
+        bottom 10px

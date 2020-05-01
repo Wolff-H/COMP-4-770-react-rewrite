@@ -1,0 +1,64 @@
+@import '~@/assets/stylesheets/colorset/index.styl'
+
+@import '~@/assets/stylesheets/overall.styl'
+
+// basic ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+body
+    display flex
+    height 100vh
+    width 100vw
+    align-items center
+    justify-content center
+    background-color $green100
+
+    #app
+        position relative
+        height (768 + 2)px//(720 + 2)px
+        width (1366 + 2)px//(1280 + 2)px
+        border 1px solid black
+        background-color white
+
+        >.view
+            position absolute
+            width 100%
+            height 100%
+            background-color white
+
+            >title
+                display flex
+                align-items center
+                height 40px
+                font-size 24px
+                padding-left 50px
+                background-color $black03
+
+                >img.go-back
+                    position absolute
+                    left 0px
+                    height 40px
+                    transform rotate(90deg)
+                    &:hover
+                        background-color $black20
+            >section
+                position relative
+                height calc(100% - 40px)
+                width 100%
+
+// z-indexes ///////////////////////////////////////////////////////////////////////////////////////////////////////
+#app
+    z-index 0
+
+    >#login.view
+        z-index 100
+
+    >#hud.view
+        z-index 100
+    
+    >#editor-gui.view
+        z-index 100
+
+    >#game-pause-modal.view
+        z-index 200
+
+    >#loading-assets.view
+        z-index 500
