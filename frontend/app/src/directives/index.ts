@@ -1,4 +1,6 @@
 import CSStoJSON from './css2json'
+import $my from '@/commons/my'
+import Password from 'antd/lib/input/Password'
 
 const r =
 {
@@ -18,7 +20,37 @@ const r =
     css(css_string:string)
     {
         return (CSStoJSON as any)(css_string)['']
+    },
+
+    model: model
+}
+
+/**
+ * @description 响应式数据的双向绑定指令，注意：仅支持在state内的顶层属性
+ * @param value 
+ */
+// function model(value:string) :string
+// function model(value:string) :string
+// {
+//     if(typeof value === 'string')
+//     {
+        
+//     }
+// }
+function model(component:any, value_name:string)
+{
+    return{
+        value: component.state[value_name],
+        onChange: (e:any) => 
+        { 
+            component.setState(
+                {
+                    [value_name]: e.target.value
+                }
+            )
+        }
     }
 }
+
 
 export default r

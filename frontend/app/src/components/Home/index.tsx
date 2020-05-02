@@ -2,17 +2,22 @@ import React from "react"
 import * as antd from "antd"
 
 import r from "@/directives/index"
+
+import { connect } from 'react-redux'
+import store from '@/store'
 // styles //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 import "./index.styl"
 
 /**********************************************************************************************************************/
+
 interface _props
 {
     title:string,
     message:string,
+    store_state:any,
 }
 
-export default
+// export default
 class Home extends React.Component<_props>
 {
     render()
@@ -23,8 +28,8 @@ class Home extends React.Component<_props>
         {
             view =
                 <div id="home" className="view"
-                    style={   {...r.show(this.state.if_display)}   }
-                    title={   this.props.title   }
+                    style={   {...r.show(this.if_display)}   }
+                    // title={   this.props.title   }
                 >
                     <div className="title">
                         GameName {   this.menu_items_amount   /* !!! for-test: use computed property */}
@@ -38,6 +43,7 @@ class Home extends React.Component<_props>
                                     <antd.Button className="entry"
                                         key={   index   }
                                         type="primary"
+                                        onClick={()=>this.toView(route[1])}
                                     >
                                         {   route[0]   }
                                     </antd.Button>
@@ -57,17 +63,17 @@ class Home extends React.Component<_props>
         return view
     }
 
+    // default props ---------------------------------------------------------------------------------------------------
     // 0 //
-    // default props ///////////////////////////////////////////////////////////////////////////////////////////////////
     static defaultProps =
     {
         title: 'default title',
     }
-    // state ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // state -----------------------------------------------------------------------------------------------------------
     state =
     {
         if_render: true,
-        if_display: true,
+        // if_display: true,
         menu_config:
         [
             ['play campaign', 'campaign'],
@@ -84,10 +90,19 @@ class Home extends React.Component<_props>
     {
         return Object.keys(this.state.menu_config).length    // !!! for-test: test class getter function
     }
-
-    // methods /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    get if_display()
+    {
+        return this.props.store_state.Views._.using_view === 'home'
+    }
+    // methods ---------------------------------------------------------------------------------------------------------
     triggerHiddenEgg = () =>
     {
+        store.dispatch(
+            {
+                type: 'loadedAssets',
+            }
+        )
+        
         this.setState((state, props) => {
             let state_to_set =
             {
@@ -99,4 +114,24 @@ class Home extends React.Component<_props>
             return state_to_set
         })
     }
+    toView = (view_name:string) :void =>
+    {
+        store.dispatch(
+            {
+                type: 'Views/useView',
+                view_name: view_name,
+            }
+        )
+    }
 }
+
+const mapStateToProps = (state:any) =>
+{
+    return{
+        store_state: state,
+    }
+}
+
+/**********************************************************************************************************************/
+
+export default connect(mapStateToProps)(Home)

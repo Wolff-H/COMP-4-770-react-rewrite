@@ -1,27 +1,73 @@
-import { createStore } from 'redux'
+import { createStore, combineReducers } from 'redux'
 
+// import $my from '@/commons/my'
+import Views from './Views'
 
 /**********************************************************************************************************************/
 
-function counter(state = 0, action:any)
+
+// actions /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+const MODULE_PATH = ''
+const loadedAssets = `${MODULE_PATH}loadedAssets`
+
+// initial state ///////////////////////////////////////////////////////////////////////////////////////////////////////
+const initial_state =
 {
-    switch (action.type)
+    username: '',
+    if_user_logged_in: false,
+    if_loading_assets: true,
+    loaded: [],
+    using_level_name: '',
+
+    custom_levels: [],
+    using_level: null,
+
+    account_levels: [],
+
+    if_using_bgm: true,
+}
+
+// reducer /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function reducer(state = initial_state, action:store_d.Action)
+{
+    switch(action.type)
     {
-        case 'INCREMENT':
-            return state + 1
-        case 'DECREMENT':
-            return state - 1
+        case loadedAssets:
+            return logics.loadedAssets(state)
         default:
             return state
     }
 }
 
-let store = createStore(counter)
+const logics =
+{
+    loadedAssets(state:any)
+    {
+        // state.if_loading_assets = false
+        console.log('loadedAssets')
+        return state
+    },
+    addJustLoaded(state:any, action:store_d.Action)
+    {
+        // state.loaded.push(payload.just_loaded)
+        console.log('addJustLoaded')
+    },
+
+}
+
+/**********************************************************************************************************************/
+
+let store = createStore(
+    combineReducers(
+        {
+            _: reducer,
+            Views: Views,
+        }
+    )
+)
 
 store.subscribe(
     () => console.log(store.getState())
 )
-
-/**********************************************************************************************************************/
 
 export default store

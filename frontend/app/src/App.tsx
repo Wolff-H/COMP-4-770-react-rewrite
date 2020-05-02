@@ -1,5 +1,8 @@
 import React from 'react'
-import Home from '@/components/Home/index'
+import Home from '@/components/Home'
+import Login from '@/components/Login'
+import Account from '@/components/Account'
+
 // style ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 import './antd.css'
 import './App.styl'
@@ -19,6 +22,8 @@ function App()
     return(
         <div id="app">
             <Home {   ...p_Home   }></Home>
+            <Login></Login>
+            <Account></Account>
         </div>
     )
 }
