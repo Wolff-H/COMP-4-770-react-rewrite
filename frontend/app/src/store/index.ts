@@ -9,6 +9,7 @@ import Views from './Views'
 // actions /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 const MODULE_PATH = ''
 const loadedAssets = `${MODULE_PATH}loadedAssets`
+const addJustLoaded = `${MODULE_PATH}addJustLoaded`
 
 // initial state ///////////////////////////////////////////////////////////////////////////////////////////////////////
 const initial_state =
@@ -16,7 +17,7 @@ const initial_state =
     username: '',
     if_user_logged_in: false,
     if_loading_assets: true,
-    loaded: [],
+    assets_loaded: [],
     using_level_name: '',
 
     custom_levels: [],
@@ -34,6 +35,8 @@ function reducer(state = initial_state, action:store_d.Action)
     {
         case loadedAssets:
             return logics.loadedAssets(state)
+        case addJustLoaded:
+            return logics.addJustLoaded(state, action)
         default:
             return state
     }
@@ -51,6 +54,7 @@ const logics =
     {
         // state.loaded.push(payload.just_loaded)
         console.log('addJustLoaded')
+        return state
     },
 
 }

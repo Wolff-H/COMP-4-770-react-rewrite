@@ -2,7 +2,7 @@ import React from "react"
 import * as antd from "antd"
 import * as icons from '@ant-design/icons'
 
-import r from "@/directives/index"
+// import r from "@/directives/index"
 
 import { connect } from 'react-redux'
 import store from '@/store'

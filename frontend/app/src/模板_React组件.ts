@@ -1,7 +1,7 @@
 import React from "react"
 import * as antd from "antd"
 
-import r from "@/directives/index"
+// import r from "@/directives"
 
 import { connect } from 'react-redux'
 import store from '@/store'
@@ -33,7 +33,6 @@ class ClassName extends React.Component<_props>
     // 0 //
     state =
     {
-        
         
     }
     // 1 //

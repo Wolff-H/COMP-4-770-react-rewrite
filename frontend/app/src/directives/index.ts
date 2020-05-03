@@ -1,6 +1,5 @@
 import CSStoJSON from './css2json'
-import $my from '@/commons/my'
-import Password from 'antd/lib/input/Password'
+// import $my from '@/commons/my'
 
 const r =
 {
@@ -22,7 +21,7 @@ const r =
         return (CSStoJSON as any)(css_string)['']
     },
 
-    model: model
+    model: model,
 }
 
 /**
@@ -51,6 +50,5 @@ function model(component:any, value_name:string)
         }
     }
 }
-
 
 export default r
