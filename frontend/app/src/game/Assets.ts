@@ -81,7 +81,7 @@ export default class Assets
             store.dispatch(
                 {
                     type: "addJustLoaded",
-                    just_loaded: '<<< All Animations Loaded >>>',
+                    just_loaded: '=== All Animations Loaded ===',
                 }
             )
         }
@@ -122,7 +122,7 @@ export default class Assets
             store.dispatch(
                 {
                     type: "addJustLoaded",
-                    just_loaded: '<<< All Sounds Loaded >>>',
+                    just_loaded: '=== All Sounds Loaded ===',
                 }
             )
         }
@@ -158,12 +158,12 @@ export default class Assets
             }
         )
 
-        if(this.sound_amount_left === 0)
+        if(this.texture_amount_left === 0)
         {
             store.dispatch(
                 {
                     type: "addJustLoaded",
-                    just_loaded: '<<< All Textures Loaded >>>',
+                    just_loaded: '=== All Textures Loaded ===',
                 }
             )
 

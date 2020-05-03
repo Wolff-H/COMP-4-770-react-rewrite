@@ -44,6 +44,7 @@ class Home extends React.Component<_props>
                                         key={   index   }
                                         type="primary"
                                         onClick={()=>this.toView(route[1])}
+                                        disabled={index<3 && this.if_loading_assets}
                                     >
                                         {   route[0]   }
                                     </antd.Button>
@@ -93,6 +94,10 @@ class Home extends React.Component<_props>
     get if_display()
     {
         return this.props.store_state.Views._.using_view === 'home'
+    }
+    get if_loading_assets()
+    {
+        return this.props.store_state._.if_loading_assets
     }
     // methods ---------------------------------------------------------------------------------------------------------
     triggerHiddenEgg = () =>

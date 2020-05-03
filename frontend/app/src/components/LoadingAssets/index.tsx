@@ -27,12 +27,21 @@ class LoadingAssets extends React.Component<_props>
                 <div id="loading-assets" className="view">
                     <div className="current-loading">
                         <div>loading:</div>
-                        {/* <div
-                            v-for="(value, index) of loaded"
-                            // :key="index"
-                        >
-                            {{   value   }}
-                        </div> */}
+                        {
+                            // render loaded assets list //
+                            this.assets_loaded.map(
+                                (item:string, index:number) =>
+                                {
+                                    return(
+                                        <div
+                                            key={index}
+                                        >
+                                            {item}
+                                        </div>
+                                    )
+                                }
+                            )
+                        }
                     </div>
                 </div>
         }

@@ -1,6 +1,6 @@
-import { createStore, combineReducers } from 'redux'
+import { createStore, combineReducers, compose } from 'redux'
 
-// import $my from '@/commons/my'
+import $my from '@/commons/my'
 import Views from './Views'
 
 /**********************************************************************************************************************/
@@ -17,13 +17,13 @@ const initial_state =
     username: '',
     if_user_logged_in: false,
     if_loading_assets: true,
-    assets_loaded: [],
+    assets_loaded: [] as string[],
     using_level_name: '',
 
-    custom_levels: [],
+    custom_levels: [] as any[],
     using_level: null,
 
-    account_levels: [],
+    account_levels: [] as any[],
 
     if_using_bgm: true,
 }
@@ -46,20 +46,29 @@ const logics =
 {
     loadedAssets(state:any)
     {
-        // state.if_loading_assets = false
+        let state_to_set = $my.deepCopy(state)
+        state_to_set.if_loading_assets = false
         console.log('loadedAssets')
-        return state
+        return state_to_set
     },
     addJustLoaded(state:any, action:store_d.Action)
     {
-        // state.loaded.push(payload.just_loaded)
+        let state_to_set = $my.deepCopy(state)
+        state_to_set.assets_loaded.push(action.just_loaded)
         console.log('addJustLoaded')
-        return state
+        return state_to_set
     },
 
 }
 
 /**********************************************************************************************************************/
+declare global
+{
+    interface Window
+    {
+        __REDUX_DEVTOOLS_EXTENSION__:any
+    }
+}
 
 let store = createStore(
     combineReducers(
@@ -67,11 +76,16 @@ let store = createStore(
             _: reducer,
             Views: Views,
         }
+    ),
+    undefined,
+    compose(
+        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+
     )
 )
 
-store.subscribe(
-    () => console.log(store.getState())
-)
+// store.subscribe(
+//     () => console.log(store.getState())
+// )
 
 export default store
