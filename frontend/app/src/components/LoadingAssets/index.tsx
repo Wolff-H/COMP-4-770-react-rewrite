@@ -1,10 +1,10 @@
 import React from "react"
-import * as antd from "antd"
+// import * as antd from "antd"
 
-import r from "@/directives"
+// import r from "@/directives"
 
 import { connect } from 'react-redux'
-import store from '@/store'
+// import store from '@/store'
 // styles //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 import "./index.styl"
 
