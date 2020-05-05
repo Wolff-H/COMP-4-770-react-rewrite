@@ -6,6 +6,7 @@ import * as icons from '@ant-design/icons'
 
 import { connect } from 'react-redux'
 import store from '@/store'
+import campaign_levels from '@/game/campaign-levels'
 // styles //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 import "./index.styl"
 
@@ -35,7 +36,20 @@ class Campaign extends React.Component<_props>
                         </antd.Button>
                     </title>
                     <section>
-                        
+                        {
+                            campaign_levels.map(
+                                (item, index) =>
+                                {
+                                    return(
+                                        <antd.Button
+                                            key={index}
+                                        >
+                                            
+                                        </antd.Button>
+                                    )
+                                }
+                            )
+                        }
                     </section>
                 </div>
         }

@@ -48,14 +48,14 @@ const logics =
     {
         let state_to_set = $my.deepCopy(state)
         state_to_set.if_loading_assets = false
-        console.log('loadedAssets')
+        // console.log('loadedAssets')
         return state_to_set
     },
     addJustLoaded(state:any, action:store_d.Action)
     {
         let state_to_set = $my.deepCopy(state)
         state_to_set.assets_loaded.push(action.just_loaded)
-        console.log('addJustLoaded')
+        // console.log('addJustLoaded')
         return state_to_set
     },
 
@@ -70,7 +70,7 @@ declare global
     }
 }
 
-let store = createStore(
+const store = createStore(
     combineReducers(
         {
             _: reducer,
@@ -80,7 +80,6 @@ let store = createStore(
     undefined,
     compose(
         window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-
     )
 )
 

@@ -12,7 +12,7 @@ class GameEngine
 {
     assets = new Assets(assets_mapping.animation_mapping, assets_mapping.sound_mapping, assets_mapping.texture_mapping)
     // m_entity_presets = entity_presets
-    // m_level = TEST_level_config
+    level_config:any = {}
     // m_game_play = null
     // m_game_editor = null
 

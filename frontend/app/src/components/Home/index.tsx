@@ -77,12 +77,13 @@ class Home extends React.Component<_props>
         // if_display: true,
         menu_config:
         [
-            ['play campaign', 'campaign'],
-            ['play custom levels', 'custom-levels'],
-            ['level editor', 'editor'],
-            ['game information', 'game-info'],
-            ['settings', 'settings'],
-            ['my account', 'account'],
+            // ['play campaign', 'campaign'],
+            // ['play custom levels', 'custom-levels'],
+            ['play',                'play'      ],
+            ['level editor',        'editor'    ],
+            ['game information',    'game-info' ],
+            ['settings',            'settings'  ],
+            ['my account',          'account'   ],
         ],
         
     }

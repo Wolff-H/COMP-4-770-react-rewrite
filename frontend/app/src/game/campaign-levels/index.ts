@@ -1,6 +1,5 @@
 export default
-{
-    1:
+[
     {
         id: -1,
         name: 'campaign level 1',
@@ -54,52 +53,56 @@ export default
             },
         },
 
-        level_entities:
+        entities:
         [
             {
-                layer:  6,
-                tags:            ['player', 'movable', 'living'],
+                layer:              6,
+                tags:               ['player'],
                 components:
                 {
-                    CBoundingBox: [],
-                    CHealth:         [100, true],
-                    CWeapon: [],
-                    CTransform:      [256, 256],
-                    CAnimation:      ['air'],
-                    CInput:          true,
-                    CState:          'jumping',
-                    CGravity:        [1],
-                    CGrabber:       [],
+                    CTransform:     [256, 256],
+                    CBoundingBox:   [],
+                    CHealth:        [100, true],
+                    CPlayerWeapon:  [],
+                    CInput:         [1, 1],
+                    CState:         'jumping',
+                    CGravity:       1,
                 }
             },
-            
             {
-                name: 'basedoorgreen',
-                layer: 2,
-                tags: ['tile'],
+                layer:              2,
+                tags:               ['tile'],
                 components:
                 {
-                    CBoundingBox: [],
-                    CTransform: [256,500], 
-                    CAnimation: ['basedoorgreen'],
+                    CTransform:     [256,500], 
+                    CBoundingBox:   [],
+                    CAnimation:     ['basedoorgreen'],
                 }
             },
         ]
     },
-    2:
     {
-
+        id: -2,
+        name: 'campaign level 2',
+        author: '*official*',
+        description: 'this is a demo level config for campaign level 2',
     },
-    3:
     {
-
+        id: -3,
+        name: 'campaign level 3',
+        author: '*official*',
+        description: 'this is a demo level config for campaign level 3',
     },
-    4:
     {
-
+        id: -4,
+        name: 'campaign level 4',
+        author: '*official*',
+        description: 'this is a demo level config for campaign level 4',
     },
-    5:
     {
-
+        id: -5,
+        name: 'campaign level 5',
+        author: '*official*',
+        description: 'this is a demo level config for campaign level 5',
     },
-}
+]

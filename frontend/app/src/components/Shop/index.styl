@@ -4,4 +4,55 @@
 
 // basic ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 #shop
-    // 
+
+    >section
+        // padding 10px
+        
+        >.title
+            padding 10px
+            font-size 20px
+        
+        >.account-financial-info
+            position absolute
+            top 0px
+            right 200px
+            border-left 3px solid $black20
+            padding-left 10px
+        
+        >.shelf
+            padding 20px
+            height 500px
+            overflow-y scroll
+            border-top 1px solid $black20
+            border-bottom 1px solid $black20
+            background-color $black03
+
+            .item.card
+                float left
+                width 45%
+                height 150px
+                margin-right 20px
+                margin-bottom 20px
+                &:hover
+                    background-color $blue20
+                user-select none
+                *
+                    user-select none
+                
+                .ant-card-head-title
+                    font-weight bold
+
+                .ant-card-extra
+                    font-weight bold
+                    color $blue60
+
+                // img
+                //     min-height 110px
+                //     min-width 110px
+                //     background-color $black10
+
+    button.start
+        position absolute
+        right 10px
+        width 150px
+        bottom 30px

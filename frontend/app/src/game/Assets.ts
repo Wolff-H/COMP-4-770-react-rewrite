@@ -173,7 +173,7 @@ export default class Assets
                 {
                     store.dispatch({type: "loadedAssets"})
                 },
-                5000
+                1000
             )
         }
     }

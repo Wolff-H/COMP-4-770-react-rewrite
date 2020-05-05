@@ -2,13 +2,15 @@ import React from 'react'
 import Home from '@/components/Home'
 import Login from '@/components/Login'
 import LoadingAssets from '@/components/LoadingAssets'
-import Campaign from '@/components/Campaign'
-import CustomLevels from '@/components/CustomLevels'
+// import Campaign from '@/components/Campaign'
+// import CustomLevels from '@/components/CustomLevels'
+import Play from '@/components/Play'
 import Editor from '@/components/Editor'
 import GameInfo from '@/components/GameInfo'
 import Settings from '@/components/Settings'
 import Account from '@/components/Account'
 import Shop from '@/components/Shop'
+import CCanvas from '@/components/CCanvas'
 
 import main from '@/game/main'
 
@@ -51,13 +53,15 @@ class App extends React.Component
                 <Login></Login>
                 <LoadingAssets></LoadingAssets>
                 <Home {   ...p_Home   }></Home>
-                <Campaign></Campaign>
-                <CustomLevels></CustomLevels>
+                {/* <Campaign></Campaign> */}
+                {/* <CustomLevels></CustomLevels> */}
+                <Play></Play>
                 <Editor></Editor>
                 <GameInfo></GameInfo>
                 <Settings></Settings>
                 <Account></Account>
                 <Shop></Shop>
+                <CCanvas></CCanvas>
             </div>
         )
     }
