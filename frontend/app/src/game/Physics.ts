@@ -1,4 +1,3 @@
-
 import Vec2 from './Vec2.js'
 import Entity from './Entity.js'
 

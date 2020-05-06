@@ -127,7 +127,7 @@ class Shop extends React.Component<_props>
 
     get using_level_config()
     {
-        return window.game.game_engine.level_config
+        return window.game.game_engine.using_level_config
     }
 
     // methods ---------------------------------------------------------------------------------------------------------
@@ -170,6 +170,11 @@ class Shop extends React.Component<_props>
     startLevel = () =>
     {
         console.log('start level')
+        // send purchase to game engine //
+        // the engine will combine with level config and produce the final level config
+        window.game.game_engine.using_purchase = $my.deepCopy(this.state.items_bought)
+        
+        window.game.game_engine.startLevel()
         
         this.toView('canvas-game')
     }

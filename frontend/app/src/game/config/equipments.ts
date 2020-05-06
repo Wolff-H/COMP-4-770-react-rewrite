@@ -14,19 +14,19 @@ export default
     },
     damage_scroll:
     {
-        title: 'Damage Potion',
+        title: 'Damage Scroll',
         description: 'For a period, double the damage you dealt. Overlay use will reset its effective duration.',
         animation: null,
     },
     defense_scroll:
     {
-        title: 'Defense Potion',
+        title: 'Defense Scroll',
         description: 'For a period, reduce the damage you received. Overlay use will reset its effective duration.',
         animation: null,
     },
     speed_scroll:
     {
-        title: 'Speed Potion',
+        title: 'Speed Scroll',
         description: 'For a period, double your movement speed. Overlay use will reset its effective duration.',
         animation: null,
     },

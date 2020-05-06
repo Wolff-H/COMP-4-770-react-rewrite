@@ -10,7 +10,6 @@ class Vec2
         this.y = y
     }
 
-    // _(operator:string, rhs:Vec2) :Vec2|void
     _(operator:string, rhs:any)
     {
         switch(operator)

@@ -1,7 +1,8 @@
 import $my from '@/commons/my'
 
-import Login from './Login'
 import { combineReducers } from 'redux'
+import Login from './Login'
+import GamePauseModal from './GamePauseModal'
 
 /**********************************************************************************************************************/
 
@@ -42,6 +43,7 @@ export default combineReducers(
     {
         _: reducer,
         Login: Login,
+        GamePauseModal: GamePauseModal,
         // other views ...
     }
 )

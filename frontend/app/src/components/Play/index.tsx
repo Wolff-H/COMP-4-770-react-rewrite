@@ -128,7 +128,7 @@ class Play extends React.Component<_props>
             let level_config = API.Game.fetchLevel(parseInt(this.state.selected_level_id))
     
             // set game engine to use the level //
-            window.game.game_engine.level_config = level_config
+            window.game.game_engine.using_level_config = level_config
     
             // jump to shop //
             this.toView('shop')

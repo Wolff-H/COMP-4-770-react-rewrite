@@ -1,21 +1,23 @@
 import React from "react"
-import * as antd from "antd"
+// import * as antd from "antd"
 
-// import r from "@/directives"
+import r from "@/directives"
 
-import { connect } from "react-redux"
-import store from "@/store"
+// import { connect } from "react-redux"
+// import store from "@/store"
 // styles //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-import "./index.styl"
+import "./Bar.styl"
 
 /**********************************************************************************************************************/
 
 interface _props
 {
-    store_state:any,
+    class_name:string,
+    title:string,
 }
 
-class ClassName extends React.Component<_props>
+export default
+class Bar extends React.Component<_props>
 {
     render()
     {
@@ -23,7 +25,16 @@ class ClassName extends React.Component<_props>
 
         if(true)
         {
-            // view =
+            view =
+                <div className={"bar"+r.class_({[this.props.class_name]: true})}
+                >
+                    <div className="groove">
+                        <span>
+                            {   this.props.title   }
+                        </span>
+                        <div className="content"></div>
+                    </div>
+                </div>
         }
 
         return view
@@ -42,13 +53,13 @@ class ClassName extends React.Component<_props>
 
 }
 
-const mapStateToProps = (state:any) =>
-{
-    return{
-        store_state: state,
-    }
-}
+// const mapStateToProps = (state:any) =>
+// {
+//     return{
+//         store_state: state,
+//     }
+// }
 
 /**********************************************************************************************************************/
 
-export default connect(mapStateToProps)(ClassName)
+// export default connect(mapStateToProps)(Bar)

@@ -11,6 +11,8 @@ import Settings from '@/components/Settings'
 import Account from '@/components/Account'
 import Shop from '@/components/Shop'
 import CCanvas from '@/components/CCanvas'
+import HUD from '@/components/HUD'
+import GamePauseModal from '@/components/GamePauseModal'
 
 import main from '@/game/main'
 
@@ -62,6 +64,8 @@ class App extends React.Component
                 <Account></Account>
                 <Shop></Shop>
                 <CCanvas></CCanvas>
+                <HUD></HUD>
+                <GamePauseModal></GamePauseModal>
             </div>
         )
     }
