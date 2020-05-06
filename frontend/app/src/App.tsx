@@ -39,6 +39,13 @@ import './App.styl'
 //         </div>
 //     )
 // }
+declare global
+{
+    interface Window
+    {
+        react_app:any
+    }
+}
 
 class App extends React.Component
 {
@@ -70,9 +77,22 @@ class App extends React.Component
         )
     }
 
+    // constructor(props:any)
+    // {
+    //     super(props)
+
+    //     // this.hud = React.createRef()
+    // }
+
+    // hud:any = null
+
+    // lifecycles //////////////////////////////////////////////////////////////////////////////////////////////////////
+
     componentDidMount()
     {
         main()
+
+        window.react_app = this
     }
 }
 

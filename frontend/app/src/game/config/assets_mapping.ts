@@ -3,14 +3,15 @@ export default
     /**
      * @description 
      * object structure ->
-     * animation_name: [src_path, slides_total, play_interval, if_repeat]
+     * animation_name: [src_path, slides_total, play_interval]
      */
     animation_mapping:
     {
-        block:              ['mario/block.png',     1, 0, 1],
-        brick:              ['mario/brick.png',     1, 0, 1],
-        ground:             ['mario/ground.png',    1, 0, 1],
-        flag:               ['mario/flag.png',      1, 0, 1],
+        base_block:             ['blocks/base_block.png',           1, 0],
+        base_block_breakable:   ['blocks/base_block_breakable.png', 1, 0],
+        dirt:                   ['blocks/dirt.png',                 1, 0],
+        dirt_grass:             ['blocks/dirt_grass.png',           1, 0],
+        stand:                  ['player/stand.png',                1, 0],
     },
     /**
      * @description

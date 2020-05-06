@@ -1,4 +1,4 @@
-import Entity from './Entity.js'
+import Entity from './Entity'
 
 /**********************************************************************************************************************/
 
@@ -28,11 +28,6 @@ class EntityManager
 
     entity_id_counter       :number = 0
 
-    constructor()
-    {
-
-    }
-
     update()
     {        
         // add to_add //
@@ -42,7 +37,7 @@ class EntityManager
             // add ref to tag map //
             let tags = entity.tags
             
-            if(tags != [])
+            if(tags !== [])
             {
                 for(let tag of tags)
                 {
@@ -108,7 +103,7 @@ class EntityManager
     getEntities(tag:string = ''): object
     {
         // get all entities //
-        if(tag == '')
+        if(tag === '')
         {
             return this.entities
         }

@@ -1,5 +1,5 @@
 import React from "react"
-// import * as antd from "antd"
+import * as antd from "antd"
 
 // import r from "@/directives"
 
@@ -50,6 +50,15 @@ class HUD extends React.Component<_props>
                         <el-progress type="circle" :percentage="25"  :show-text="false" :width="36" :stroke-width="3"></el-progress>
                         <el-progress type="circle" :percentage="70"  :show-text="false" :width="36" :stroke-width="3" status="warning"></el-progress>
                         <el-progress type="circle" :percentage="50"  :show-text="false" :width="36" :stroke-width="3" status="exception"></el-progress> */}
+                        {
+                            //  type="circle" percent={100} showInfo={false} width={36} strokeWidth={8}
+                        }
+                        <antd.Progress {...this.p_progress} strokeColor="#f5222d"></antd.Progress>    {/* damage_scroll   */}
+                        <antd.Progress {...this.p_progress} strokeColor="#fa8c16"></antd.Progress>    {/* defense_scroll  */}
+                        <antd.Progress {...this.p_progress} strokeColor="#52c41a"></antd.Progress>    {/* health_scroll   */}
+                        <antd.Progress {...this.p_progress} strokeColor="#1890ff"></antd.Progress>    {/* energy_scroll   */}
+                        <antd.Progress {...this.p_progress} strokeColor="#722ed1"></antd.Progress>    {/* speed_scroll    */}
+                        <antd.Progress {...this.p_progress} strokeColor="#666666"></antd.Progress>    {/* gravity_scroll  */}
                     </div>
                     <div className="bottom-region">
                         <Bar
@@ -80,11 +89,28 @@ class HUD extends React.Component<_props>
         return view
     }
 
+    // constructor(props:any)
+    // {
+    //     super(props)
+    //     {
+
+    //     }
+    // }
+
     // data ------------------------------------------------------------------------------------------------------------
     // 0 //
     state =
     {
         
+    }
+
+    p_progress =
+    {
+        type: 'circle' as const,
+        percent: 75,
+        showInfo: false,
+        width: 36,
+        strokeWidth: 8,
     }
     // 1 //
     get if_render()
@@ -94,6 +120,11 @@ class HUD extends React.Component<_props>
 
     // methods ---------------------------------------------------------------------------------------------------------
 
+    // lifecycles ------------------------------------------------------------------------------------------------------
+    // componentDidMount()
+    // {
+    //     window.react_app.hud = this
+    // }
 }
 
 const mapStateToProps = (state:any) =>

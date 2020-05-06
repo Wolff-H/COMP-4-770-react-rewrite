@@ -1,9 +1,24 @@
+/**
+ * standard:
+ *     1. layer
+ *         (it's highly recommanded to put entities in this order)
+ *         0: background
+ *         1: decoration
+ *         2: tile
+ *         3: effect
+ *         4: minion
+ *         5: boss
+ *         6: player
+ *         7: bullet
+ *         8: front graphic
+ *         9: front text
+ */
 export default
 {
     id: -1,
     name: 'demo level',
     author: '*official*',
-    description: 'this is a demo level config for campaign level 1',
+    description: 'this is a demo level config',
 
     victory_conditions:
     {
@@ -70,17 +85,16 @@ export default
     entities:
     [
         {
-            layer:              6,
-            tags:               ['player'],
+            layer:             6,
+            tags:              ['player'],
             components:
             {
-                CTransform:     [256, 256],
-                CBoundingBox:   [],
-                CHealth:        [100, true],
-                CPlayerWeapon:  [],
-                CInput:         [1, 1],
-                CState:         'jumping',
-                CGravity:       1,
+                Transform:     [256, 256],
+                BoundingBox:   [64, 64],
+                Health:        [100, 100],
+                Input:         [1, 1],
+                State:         'jumping',
+                Gravity:       1,
             }
         },
         {
@@ -88,9 +102,9 @@ export default
             tags:               ['tile'],
             components:
             {
-                CTransform:     [256,500], 
-                CBoundingBox:   [],
-                CAnimation:     ['basedoorgreen'],
+                Transform:     [256,500], 
+                BoundingBox:   [],
+                Animation:     ['base_block', true],
             }
         },
     ]

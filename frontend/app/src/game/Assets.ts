@@ -57,17 +57,17 @@ export default class Assets
                         img,
                         animation_mapping[animation_name][1],    // slides_total
                         animation_mapping[animation_name][2],    // play_interval
-                        animation_mapping[animation_name][3],    // if_repeat
+                        // animation_mapping[animation_name][3],    // if_repeat
                     )
                 }
             img.src = require(`./art-resource/animations/${animation_mapping[animation_name][0]}`)
         }
     }
 
-    handleLoadedImage(image:HTMLImageElement, slides_total:number, play_interval:number, if_repeat:boolean)
+    handleLoadedImage(image:HTMLImageElement, slides_total:number, play_interval:number/*, if_repeat:boolean*/)
     {
         this.animation_amount_left -= 1
-        this.animation_map[image.name] = new Animation(image, image.name, slides_total, play_interval, if_repeat)
+        this.animation_map[image.name] = new Animation(image, image.name, slides_total, play_interval/*, if_repeat*/)
 
         store.dispatch(
             {
