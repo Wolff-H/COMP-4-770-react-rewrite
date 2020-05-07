@@ -12,6 +12,9 @@ export default
         dirt:                   ['blocks/dirt.png',                 1, 0],
         dirt_grass:             ['blocks/dirt_grass.png',           1, 0],
         stand:                  ['player/stand.png',                1, 0],
+        unset_dec:              ['misc/unset_dec.png',              1, 0],
+        unset_tile:             ['misc/unset_tile.png',             1, 0],
+
     },
     /**
      * @description

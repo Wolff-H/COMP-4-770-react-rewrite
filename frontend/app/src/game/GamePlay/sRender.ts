@@ -1,4 +1,4 @@
-import GameBasic from './index'
+import GamePlay from './index'
 import Entitiy from '../Entity'
 import Entity from '../Entity'
 import Animation from '../Animation'
@@ -6,8 +6,10 @@ import Animation from '../Animation'
 /**********************************************************************************************************************/
 
 export default
-function sRender(this:GameBasic)
+function sRender(this:GamePlay)
 {
+    console.log('gameplay sRender')
+    
     // clear canvas //
     this.canvas2d.clearRect(0, 0, this.canvas.width, this.canvas.height)
 

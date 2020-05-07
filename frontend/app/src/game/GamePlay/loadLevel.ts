@@ -1,4 +1,4 @@
-import GameBasic from './index'
+import GamePlay from './index'
 import Vec2 from '../Vec2'
 import {
     CTransform,
@@ -7,14 +7,13 @@ import {
     CState,
     CInput,
 } from '../Components'
-import GamePlay from '../GamePlay'
 
 /**********************************************************************************************************************/
 
 export default
-function loadLevel(this:GameBasic)
+function loadLevel(this:GamePlay)
 {
-    console.log('gamebasic load level')
+    console.log('gameplay load level')
     
     // load entities to entity_manager ---------------------------------------------------------------------------------
     for(let entity_config of this.level_config.entities)

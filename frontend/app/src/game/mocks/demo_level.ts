@@ -93,7 +93,7 @@ export default
                 BoundingBox:   [64, 64],
                 Health:        [100, 100],
                 Input:         [1, 1],
-                State:         'jumping',
+                // State:         'jumping',
                 Gravity:       1,
             }
         },
@@ -102,7 +102,7 @@ export default
             tags:               ['tile'],
             components:
             {
-                Transform:     [256,500], 
+                Transform:     [0,0], 
                 BoundingBox:   [],
                 Animation:     ['base_block', true],
             }

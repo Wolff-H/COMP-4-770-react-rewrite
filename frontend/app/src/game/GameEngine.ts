@@ -31,6 +31,7 @@ class GameEngine
         let level_config = this.applyPurchase(this.using_level_config, this.using_purchase)
         
         this.game_play = new GamePlay(level_config)
+        this.game_play.initialize()
         this.game_play.run()
     }
     destroyGamePlay()

@@ -1,4 +1,5 @@
 import Vec2 from './Vec2'
+import Animation from './Animation'
 
 class Component
 {
@@ -42,11 +43,20 @@ class CInput extends Component
     down    = false
     left    = false
     right   = false
+
+    scale:Vec2    // controls invert of input
+
+    constructor(scale:Vec2 = new Vec2(1, 1))
+    {
+        super()
+
+        this.scale = scale
+    }
 }
 
 class CAnimation extends Component
 {
-    animation = null
+    animation:Animation
     if_repeat = true
 
     constructor(animation_name:string, if_repeat = true)

@@ -11,9 +11,9 @@ import {
 interface Components
 {
     Transform?:         CTransform,
+    Animation?:         CAnimation,
     Input?:             CInput,
     BoundingBox?:       CBoundingBox,
-    Animation?:         CAnimation,
     Gravity?:           CGravity,
     State?:             CState,
     Health?:            CHealth,

@@ -7,6 +7,7 @@ import { connect } from "react-redux"
 // import store from "@/store"
 // styles //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 import "./index.styl"
+import r from "@/directives"
 
 /**********************************************************************************************************************/
 
@@ -21,12 +22,13 @@ class CCanvas extends React.Component<_props>
     {
         let view = null
 
-        if(this.if_render)
+        if(true)
         {
             view =
                 <canvas id="canvas"
                     width="1366"
                     height="768"
+                    style={{...r.show(this.if_display)}}
                 >
                     {/* game graphics will be rendered here */}
                 </canvas>
@@ -42,7 +44,7 @@ class CCanvas extends React.Component<_props>
         
     }
     // 1 //
-    get if_render()
+    get if_display()
     {
         return this.props.store_state.Views._.using_view === 'canvas-game' || this.props.store_state.Views._.using_view === 'canvas-editor'
     }

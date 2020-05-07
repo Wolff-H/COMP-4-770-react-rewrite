@@ -1,5 +1,6 @@
 import store from '@/store'
 import Animation from './Animation'
+import * as antd from 'antd'
 
 /**********************************************************************************************************************/
 
@@ -172,6 +173,8 @@ export default class Assets
                 () => 
                 {
                     store.dispatch({type: "loadedAssets"})
+                    
+                    antd.message.success('All Assets Loaded')
                 },
                 1000
             )
